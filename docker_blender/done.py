@@ -25,7 +25,7 @@ def make_obj(path,objname):
 	bpy.context.object.active_material.name = objname
 	bpy.context.object.active_material.name = objname
 
-for x in range(15):
+for x in range(20):
 	pass
 	make_obj("app/obj_files/3dframe"+str(number)+".obj","3dframe"+str(number))
 
@@ -56,13 +56,13 @@ def loc(name,r) :
 	bpy.data.objects[name].location[1] = r[1]
 	bpy.data.objects[name].location[2] = r[2]  
 
-array_y = [0,10,20,30,0,10,20,30,0,10,20,30,0,10,20,30]
+array_y = [0,10,20,30,0,10,20,30,0,10,20,30,0,10,20,30,0,10,20,30]
 
-array_x = [0,0,0,0,20,20,20,20,40,40,40,40,60,60,60,60]
+array_x = [0,0,0,0,20,20,20,20,40,40,40,40,60,60,60,60,80,80,80,80]
 
 
 number=2
-for x in range(15):
+for x in range(20):
 	pass
 	#make_obj(PATH+""+str(number)+".obj")
 	bpy.ops.object.select_all(action='TOGGLE')

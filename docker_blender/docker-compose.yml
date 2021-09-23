@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   blender:
-    image: docker.io/blendergrid/blender:2.79.0
+    build: .
     restart: "no"
     volumes: 
       - ".:/app"

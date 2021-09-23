@@ -13,13 +13,14 @@ for x in f:
   output=x.split(",")
   vals[couter]=output[1].strip("\n")
   couter=couter+1
-
 print(vals)
 #quit()
+NUMBER_OF_FRAMES=208
+
 
 PATH ="app/obj_files/3dframe"
 thetime=0
-number_of_interations=int(vals[0])
+number_of_interations=35
 steep_rate=int(vals[1])
 offset=float(vals[2])
 startnumber=2+number_of_interations*steep_rate*thetime
@@ -765,7 +766,7 @@ def number_fixer2(number):
 
 
 number=2
-for x in range(150):
+for x in range(NUMBER_OF_FRAMES):
 	select("2d_frame."+number_fixer2(number))
 	name="cleen_V2_"+number_fixer(number)
 	bpy.ops.image.open(filepath="//cleen2/"+name+".png", files=[{"name":name+".png", "name":name+".png"}], relative_path=True, show_multiview=False)
@@ -780,7 +781,7 @@ tro("","app/sean/background")
 
 tro("","app/sean/object_mover")
 
-#bpy.ops.file.autopack_toggle()
+bpy.ops.file.autopack_toggle()
 
 tro("","app/sean/light")
 tro("","app/sean/camera_mover")

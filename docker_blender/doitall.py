@@ -1,18 +1,12 @@
 import os
 import time
-os.system('apt-get update')
-os.system('apt-get install python3-pip -y')
-os.system('pip install image')
-os.system('pip install Pillow')
-os.system('pip install copy')
 from PIL import Image
-import copy
 
 path, dirs, files = next(os.walk("app/ims"))
 file_count = len(files)
-if len(files)<=20:
-	os.system("blender app/img_base.blend --background --python app/make_img_breaker.py")
-	os.system("blender app/myimg_breaker.blend --background -a")
+if len(files)<=-1:
+	#os.system("blender app/img_base.blend --background --python app/make_img_breaker.py")
+	#os.system("blender app/myimg_breaker.blend --background -a")
 	print("in right place")
 
 
@@ -56,15 +50,14 @@ if len(files)<=20:
 
 	file_location="app/ims"
 	save_loc="app/cleen2/"
-	im = Image.open(file_location+'/00'+str(20)+'.png')
-	pix = im.load()
+
 
 
 
 
 	print("ere we go")
 	try:
-		#do_ithelper(file_location,pix[0,0][0],pix[0,0][1],pix[0,0][2],60,save_loc,160 )
+		#do_ithelper(file_location,1,1,1,60,save_loc,210 )
 		pass
 	except:
 		print("done")
@@ -264,7 +257,7 @@ if len(files)<=20:
 
 	import os
 	file_location="/cleen2"
-	im = Image.open("app/"+file_location+'/cleen_V2_0020.png')
+	im = Image.open("app/ims/0002.png")
 	pix = im.load()
 
 	# change last arg
@@ -279,6 +272,7 @@ if len(files)<=20:
 
 	os.system("blender app/blank.blend --background --python app/done.py")
 else:
+	os.system("cp -r cleen2 app/cleen2")
 	os.system("blender app/working_2.blend --background --python app/insert_and_extrude.py")
 
 
